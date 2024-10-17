@@ -1,0 +1,504 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.divider {
+    width: 100%;
+    height: 30px; /* Adjust this for the size you want */
+    background-color:darkblue; 
+    margin-top: -50px; /* Adjust as needed */
+    z-index: 100;
+}
+
+html, body 
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+body 
+{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color:white;
+}
+
+
+/* Header Styles */
+
+#headerlogo
+{
+width: 7cm;
+height:3cm;
+}
+
+#header-body {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    color: white;
+}
+
+header 
+{
+    background-color:rgba(255, 255, 255, 0.8);
+    text-align: center;
+    position: sticky; /* Sticky positioning */
+    top: 0;           /* Stick at the top of the page */
+    z-index: 1000;    /* Ensure it stays above other content */
+}
+.header-container 
+{
+    
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: sticky; /* Sticky positioning */
+    top: 0;           /* Stick at the top of the page */
+    z-index: 1000;    /* Ensure it stays above other content */
+}
+
+.company-name 
+{
+    margin: 0;
+    font-size: 2em;
+}
+
+
+/* NAV BAR STYLES */
+
+.navbar {
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin: 0 20px;
+}
+
+.nav-links ul li a {
+    font-weight: 600;
+    color: darkblue;
+    text-decoration: none;
+}
+
+.nav-links ul li a:hover {
+    color: #0067c7; /* Change to a darker shade on hover */
+    text-decoration: underline; /* Add underline on hover for emphasis */
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: darkblue;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* Responsive Navbar CSS */
+@media (max-width: 768px) {
+    .nav-links ul {
+        flex-direction: column;
+        display: none; /* Initially hide the links */
+        background-color: white;
+        position: absolute;
+        top: 60px; /* Adjust this based on your header height */
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-links ul.active {
+        display: flex; /* Show the links when the menu is active */
+    }
+
+    /* Show the menu icon */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links ul li {
+        margin: 15px 0;
+    }
+}
+
+section 
+{
+    margin: 40px 0;
+    background-color: none;
+}
+
+.copyright 
+{
+    z-index: 1;
+    background-color:rgb(77, 77, 77);
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/*  FOOTER STYLES  */
+
+.footer-container {
+    background-color: white; /* Semi-transparent light blue */
+    background-blend-mode: lighten;
+    padding: 40px;
+    color: #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width:7cm;
+    height:4cm;
+}
+
+.footer-logo h3 {
+    color: #0067c7;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.footer-contact h4,
+.footer-links h4,
+.footer-form h4 {
+    color: #0067c7;
+    margin-bottom: 15px;
+}
+
+.footer-contact ul,
+.footer-links ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-contact li,
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-contact li i,
+.footer-links li i {
+    margin-right: 10px;
+    color: #333;
+}
+
+.footer-links ul {
+    padding-left: 0;
+}
+
+.footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #0067c7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+/*HOME PAGE STYLES*/
+
+
+#home-section {
+    position: relative;
+    z-index: 1;
+    margin: 0; /* Ensure no external margin */
+    min-height: 100vh;
+    min-width: 100vh;
+    padding: 60px 20px;
+    background-image: url(images/home_background.jpg);
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-content {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    color: #333;
+    max-width: 800px;
+    padding: 20px;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    animation:fadeInDown 1s ease both;
+}
+
+
+.home-content h2 {
+    text-align: left;
+    font-size: 32px;
+    color: white;
+    font-family:initial;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: white;
+    font-family:initial;
+    font-size: large;
+    font-weight: 100;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    text-wrap:wrap;
+}
+
+/* Image Styling */
+.home-image {
+    animation:fadeInDown 3s ease both;
+    position: relative;
+    right: 150px; /* Adjust this to control how much the image overlaps */
+    bottom: -150px; /* Control the vertical position */
+    z-index: 2; /* Keep the image behind the text area */
+}
+
+.home-image img {
+    width: 15cm;
+    height: 9cm;
+    border-radius: 10px;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ABOUT PAGE STYLES */
+
+
+#about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure background stays behind the content */
+}
+
+#about-section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 20px 20px;
+    background-color: white;
+    color: #333;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about-content {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    color: #333;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-content h2 {
+    font-family:initial;
+    font-weight: 100;
+    font-size:xx-large;
+    text-align: left;
+    font-size: 32px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: black;
+    font-family:initial;font-weight: 100;
+    font-size: larger;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    text-wrap:wrap;
+}
+
+.about-image {
+    
+    flex: .5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-image img {
+    width:17cm;
+    height:10cm;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/*WHAT WE DO */
+
+.what-section{
+    background-color:white;
+    text-align: center;
+    padding: 40px;
+}
+
+.what-content{
+    color:darkblue;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around items */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines if necessary */
+    gap: 30px; /* Adds space between items */
+}
+
+div.gallery {
+    flex: 1 1 40%; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 300px; /* Optional: Limit the width of each item */
+    text-align: center;
+    margin: 5px;
+    border: none;
+    float: left;
+    width: 180px;
+  }
+  
+  div.gallery:hover {
+    border:none;
+  }
+  
+  div.gallery img {
+    width: 4.5cm;
+    height: 4cm;
+
+    
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: large;
+  }
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) 
+{
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content{
+        max-width: 100%; /* Allow the content to take up more space */
+        padding: 10px;
+    }
+
+    .about-content p{
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+
+    .home-content {
+        max-width: 100%; /* Allow the content to take up more space */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .home-content p {
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+
+    .home-image img {
+        display: none; /* Hide the image on small screens */
+    }
+
+    header{
+        position: relative;
+    }
+}
+
+
+
+
+/*ANIMATION*/
+
+.animate__fadeInDown {
+    animation-duration: 1s; /* Animation duration */
+    animation-delay: 0.5s; /* Delay before animation starts */
+    animation-iteration-count: 1; /* Number of times animation repeats */
+}
