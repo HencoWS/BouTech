@@ -458,10 +458,10 @@ div.gallery {
         display: block;
     }
 
-    .about-section {
+    /*.about-section {
         flex-direction: column;
         text-align: center;
-    }
+    }*/
 
     .about-content{
         max-width: 100%; /* Allow the content to take up more space */
@@ -481,6 +481,10 @@ div.gallery {
     .home-content p {
         margin-bottom: 20px;
         margin-right: 20px;
+    }
+
+    .about-image img{
+        display: none;
     }
 
     .home-image img {
