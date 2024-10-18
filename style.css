@@ -1,5 +1,5 @@
 /* Global Styles */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
@@ -15,6 +15,9 @@ html {
     background-color:darkblue; 
     margin-top: -50px; /* Adjust as needed */
     z-index: 100;
+    margin: 0;
+    min-width: 100vh;
+    position: relative;
 }
 
 html, body 
@@ -123,7 +126,7 @@ header
     right: 20px;
 }
 
-/* Responsive Navbar CSS */
+/* Responsive Navbar */
 @media (max-width: 768px) {
     .nav-links ul {
         flex-direction: column;
@@ -175,6 +178,9 @@ section
     background-blend-mode: lighten;
     padding: 40px;
     color: #333;
+    margin: 0;
+    min-width: 100vh;
+    position: relative;
 }
 
 .footer-content {
@@ -242,11 +248,6 @@ section
     margin-top: 40px;
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-    }
-}
 
 
 /*HOME PAGE STYLES*/
@@ -255,7 +256,7 @@ section
 #home-section {
     position: relative;
     z-index: 1;
-    margin: 0; /* Ensure no external margin */
+    margin: 0; 
     min-height: 100vh;
     min-width: 100vh;
     padding: 60px 20px;
@@ -307,7 +308,7 @@ section
 .home-image {
     animation:fadeInDown 3s ease both;
     position: relative;
-    right: 150px; /* Adjust this to control how much the image overlaps */
+    right: 150px; /* Adjust this to control how much the image overlaps*/ 
     bottom: -150px; /* Control the vertical position */
     z-index: 2; /* Keep the image behind the text area */
 }
@@ -323,24 +324,12 @@ section
 /* ABOUT PAGE STYLES */
 
 
-#about-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1; /* Ensure background stays behind the content */
-}
-
 #about-section {
     position: relative;
     z-index: 1;
+    margin:0;
     min-height: 100vh;
+    min-width: 100vh;
     padding: 20px 20px;
     background-color: white;
     color: #333;
@@ -384,10 +373,10 @@ section
 
 .about-image {
     
-    flex: .5;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    position: relative;
+    right: 40px; /* Adjust this to control how much the image overlaps */
+    bottom: -20px; /* Control the vertical position */
+    z-index: 2; /* Keep the image behind the text area */
 }
 
 .about-image img {
@@ -403,6 +392,8 @@ section
     background-color:white;
     text-align: center;
     padding: 40px;
+    min-height: 100vh;
+    min-width: 100vh;
 }
 
 .what-content{
@@ -448,8 +439,71 @@ div.gallery {
 
 
 /* Responsive Design */
+/*Medium Screens*/
+@media (max-width: 992px) {
+        div.gallery {
+        flex: 1 1 30%; /* 3 items per row on medium screens */
+        max-width: 30%;
+        }
+
+        .home-content {
+            max-width: 100%;
+            padding: 10px; 
+        }
+    
+        .home-content p {
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+    
+        .home-image img {
+            display: none; 
+        }
+    
+        #about-section {
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center align items */
+        }
+    
+        .about-content{
+            max-width: 100%; 
+            padding: 10px;
+        }
+    
+        .about-content p{
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+    
+        .about-image {
+            margin-top: 20px; /* Add space between text and image */
+        }
+    
+        .about-image img {
+            width: 100%; /* Full width for images on small screens */
+            height: auto; /* Maintain aspect ratio */
+        }
+    
+        
+        .divider{
+            margin: 0;
+        }
+        .footer-container{
+        margin: 0;
+        }
+        .footer-links{
+        display:block;
+        }
+    }
+
+/*Mobile*/
 @media (max-width: 768px) 
 {
+    
+    header{
+        position: relative;
+    }
+
     .nav-links ul {
         flex-direction: column;
     }
@@ -458,13 +512,27 @@ div.gallery {
         display: block;
     }
 
-    /*.about-section {
-        flex-direction: column;
-        text-align: center;
-    }*/
+    .home-content {
+        max-width: 100%;
+        padding: 10px; 
+    }
+
+    .home-content p {
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+
+    .home-image img {
+        display: none; 
+    }
+
+    #about-section {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
+    }
 
     .about-content{
-        max-width: 100%; /* Allow the content to take up more space */
+        max-width: 100%; 
         padding: 10px;
     }
 
@@ -473,30 +541,36 @@ div.gallery {
         margin-right: 20px;
     }
 
-    .home-content {
-        max-width: 100%; /* Allow the content to take up more space */
-        padding: 10px; /* Reduce padding for smaller screens */
+    .about-image {
+        margin-top: 20px; /* Add space between text and image */
     }
 
-    .home-content p {
-        margin-bottom: 20px;
-        margin-right: 20px;
+    .about-image img {
+        width: 100%; /* Full width for images on small screens */
+        height: auto; /* Maintain aspect ratio */
     }
 
-    .about-image img{
-        display: none;
+    
+    .divider{
+        margin: 0;
+    }
+    .footer-container{
+    margin: 0;
+    }
+    .footer-links{
+    display:block;
     }
 
-    .home-image img {
-        display: none; /* Hide the image on small screens */
-    }
-
-    header{
-        position: relative;
-    }
 }
 
 
+/*Smaller Screens*/
+@media (max-width: 480px) {
+    div.gallery {
+        flex: 1 1 48%; /* 2 items per row on small screens */
+        max-width: 48%;
+    }
+}
 
 
 /*ANIMATION*/
@@ -506,3 +580,4 @@ div.gallery {
     animation-delay: 0.5s; /* Delay before animation starts */
     animation-iteration-count: 1; /* Number of times animation repeats */
 }
+
